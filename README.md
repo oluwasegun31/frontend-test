@@ -9,11 +9,13 @@ This technical assessment is designed to evaluate your skills in building intera
 ### Core Functionality
 
 1. **Document Upload**
+
    - Users should be able to upload PDF documents
    - Implement drag-and-drop functionality and/or file selection dialog
    - Display uploaded document in the viewport
 
 2. **Annotation Features**
+
    - Implement the following annotation capabilities:
      - Highlight text with customizable colors
      - Underline text with customizable colors
@@ -69,5 +71,3 @@ You have three days to complete this assessment. We estimate it should take appr
 If you have any questions or need clarification, please reach out to [dev.ritease@gmail.com](mailto:dev.ritease@gmail.com).
 
 Good luck!
-
-
