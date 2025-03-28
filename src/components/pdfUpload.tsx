@@ -17,7 +17,7 @@ export default function PDFUploader() {
     const [isSigning, setIsSigning] = useState(false);
     const pageRef = useRef<HTMLDivElement | null>(null);
     const signatureCanvasRef = useRef<HTMLCanvasElement | null>(null);
-    const documentRef = useRef<any>(null);
+    const documentRef = useRef(null);
 
     pdfjs.GlobalWorkerOptions.workerSrc = new URL(
         'pdfjs-dist/build/pdf.worker.min.mjs',
@@ -150,7 +150,7 @@ export default function PDFUploader() {
             // Handle annotations
             annotations.forEach(annotation => {
                 const page = pdfDoc.getPages()[annotation.page - 1];
-                const { width, height } = page.getSize();
+                const { height } = page.getSize();
                 
                 const annot = {
                     rect: {
@@ -193,9 +193,8 @@ export default function PDFUploader() {
             });
 
             // Handle signature lines
-            const canvas = signatureCanvasRef.current;
             const page = pdfDoc.getPages()[pageNumber - 1];
-            const { width, height } = page.getSize();
+            const { height } = page.getSize();
 
             if (lines.length > 0) {
                 lines.forEach(line => {
